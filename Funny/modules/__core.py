@@ -5,7 +5,7 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from Funny import OWNER_ID, DEV_USERS
+from Funny import  DEV_USERS
 from Funny import TEMP_DOWNLOAD_DIRECTORY as path
 from Funny import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
@@ -14,7 +14,7 @@ client = tbot
 
 @register(pattern=r"^/send ?(.*)")
 async def Prof(event):
-    if event.sender_id == OWNER_ID or event.sender_id == DEV_USERS:
+    if event.sender_id == DEV_USERS:
         pass
     else:
         return
@@ -34,5 +34,3 @@ async def Prof(event):
          )
     else:
         await event.reply("No File Found!")
-
-
