@@ -3,7 +3,6 @@ import html
 import Funny.modules.sql.blacklistusers_sql as sql
 from Funny import (
     DEV_USERS,
-    OWNER_ID,
     DRAGONS,
     DEMONS,
     TIGERS,
@@ -21,8 +20,8 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-BLACKLISTWHITELIST = [OWNER_ID] + DEV_USERS + DRAGONS + WOLVES + DEMONS
-BLABLEUSERS = [OWNER_ID] + DEV_USERS
+BLACKLISTWHITELIST =   DEV_USERS + DRAGONS + WOLVES + DEMONS
+BLABLEUSERS =  DEV_USERS
 
 
 @run_async
