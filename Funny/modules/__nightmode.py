@@ -5,7 +5,7 @@ from telethon.tl.types import ChatBannedRights
 from apscheduler.schedulers.asyncio import AsyncIOScheduler 
 from telethon import functions
 from Funny.events import register
-from Funny import OWNER_ID
+from Funny import DEV_USERS
 from Funny import telethn as tbot
 from telethon import *
 from telethon import Button, custom, events
@@ -81,7 +81,7 @@ async def profanity(event):
     if event.is_private:
         return
     input = event.pattern_match.group(2)
-    if not event.sender_id == OWNER_ID:
+    if not event.sender_id in DEV_USERS:
         if not await is_register_admin(event.input_chat, event.sender_id):
            await event.reply("Only admins can execute this command!")
            return
