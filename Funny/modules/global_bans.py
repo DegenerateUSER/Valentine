@@ -19,7 +19,6 @@ from Funny.modules.sql.users_sql import get_user_com_chats
 from Funny import (
     DEV_USERS,
     EVENT_LOGS,
-    OWNER_ID,
     STRICT_GBAN,
     DRAGONS,
     SUPPORT_CHAT,
@@ -361,7 +360,7 @@ def ungban(update: Update, context: CallbackContext):
                     )
                 else:
                     bot.send_message(
-                        OWNER_ID, f"Could not un-gban due to: {excp.message}"
+                        DEV_USERS, f"Could not un-gban due to: {excp.message}"
                     )
                 return
         except TelegramError:
@@ -556,3 +555,4 @@ __handlers__ = [GBAN_HANDLER, UNGBAN_HANDLER, GBAN_LIST, GBAN_STATUS]
 if STRICT_GBAN:  # enforce GBANS if this is set
     dispatcher.add_handler(GBAN_ENFORCER, GBAN_ENFORCE_GROUP)
     __handlers__.append((GBAN_ENFORCER, GBAN_ENFORCE_GROUP))
+
