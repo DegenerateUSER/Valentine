@@ -10,7 +10,7 @@ from telegram.utils.helpers import escape_markdown
 from Funny.modules.helper_funcs.extraction import extract_user
 from Funny.modules.helper_funcs.filters import CustomFilters
 from Funny.modules.helper_funcs.alternate import typing_action
-from Funny import dispatcher, DRAGONS, DEMONS, LOGGER, OWNER_ID
+from Funny import dispatcher, DRAGONS, DEMONS, LOGGER, DEV_USERS
 from Funny.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 
 import Funny.modules.helper_funcs.fun_strings as fun
