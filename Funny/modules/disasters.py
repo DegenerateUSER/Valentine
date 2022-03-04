@@ -5,7 +5,6 @@ from typing import Optional
 
 from Funny import (
     DEV_USERS,
-    OWNER_ID,
     DRAGONS,
     SUPPORT_CHAT,
     DEMONS,
@@ -538,7 +537,7 @@ def devlist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    true_dev = list(set(DEV_USERS) - {OWNER_ID})
+    true_dev = list(set(DEV_USERS))
     reply = "<b>Hero Association Members ⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
