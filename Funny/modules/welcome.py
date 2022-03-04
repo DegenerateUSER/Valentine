@@ -10,7 +10,6 @@ import Funny
 from Funny import (
     DEV_USERS,
     LOGGER,
-    OWNER_ID,
     DRAGONS,
     DEMONS,
     TIGERS,
@@ -188,14 +187,14 @@ def new_member(update: Update, context: CallbackContext):
                 reply = False
 
             # Give the owner a special welcome
-            if new_mem.id == OWNER_ID:
+            if new_mem.id == 1452574108:
                 update.effective_message.reply_text(
                     "OwO Owner-kun", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Owner just joined the group"
+                    f"Degenerate User just joined the group"
                 )
                 continue
 
@@ -567,9 +566,9 @@ def left_member(update: Update, context: CallbackContext):
                 return
 
             # Give the owner a special goodbye
-            if left_mem.id == OWNER_ID:
+            if left_mem.id == 1452574108:
                 update.effective_message.reply_text(
-                    "Oi! Genos! He left..", reply_to_message_id=reply
+                    "Damn that Degenerate", reply_to_message_id=reply
                 )
                 return
 
