@@ -2,7 +2,7 @@ from time import sleep
 
 import Funny.modules.sql.global_bans_sql as gban_sql
 import Funny.modules.sql.users_sql as user_sql
-from Funny import DEV_USERS, OWNER_ID, dispatcher
+from Funny import DEV_USERS, dispatcher
 from Funny.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
@@ -116,7 +116,7 @@ def callback_button(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     query_type = query.data
 
-    admin_list = [OWNER_ID] + DEV_USERS
+    admin_list =  DEV_USERS
 
     bot.answer_callback_query(query.id)
 
