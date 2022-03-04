@@ -34,10 +34,7 @@ ENV = bool(os.environ.get("ENV", False))
 if ENV:
     TOKEN = os.environ.get("TOKEN", None)
 
-    try:
-        OWNER_ID = int(os.environ.get("OWNER_ID", None))
-    except ValueError:
-        raise Exception("Your OWNER_ID env variable is not a valid integer.")
+    
 
     JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
@@ -111,10 +108,7 @@ else:
 
     TOKEN = Config.TOKEN
 
-    try:
-        OWNER_ID = int(Config.OWNER_ID)
-    except ValueError:
-        raise Exception("Your OWNER_ID variable is not a valid integer.")
+    
 
     JOIN_LOGGER = Config.JOIN_LOGGER
     OWNER_USERNAME = Config.OWNER_USERNAME
@@ -183,11 +177,6 @@ else:
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
-DRAGONS.add(OWNER_ID)
-DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1963422158)
-DEV_USERS.add(1817146787)
-DEV_USERS.add(1138045685)
 
 if not SPAMWATCH_API:
     sw = None
