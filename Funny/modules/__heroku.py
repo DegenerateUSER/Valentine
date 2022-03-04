@@ -5,7 +5,7 @@ import os
 import heroku3
 import requests
 
-from Funny import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
+from Funny import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, DEV_USERS
 from Funny.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -16,7 +16,7 @@ Heroku = heroku3.from_key(HEROKU_API_KEY)
 async def variable(var):
     if var.fwd_from:
         return
-    if var.sender_id == OWNER_ID:
+    if var.sender_id in DEV_USERS:
         pass
     else:
         return
@@ -105,7 +105,7 @@ async def variable(var):
 async def dyno_usage(dyno):
     if dyno.fwd_from:
         return
-    if dyno.sender_id == OWNER_ID:
+    if dyno.sender_id in DEV_USERS:
         pass
     else:
         return
@@ -172,7 +172,7 @@ async def dyno_usage(dyno):
 async def _(dyno):
     if dyno.fwd_from:
         return
-    if dyno.sender_id == OWNER_ID:
+    if dyno.sender_id in DEV_USERS:
         pass
     else:
         return
