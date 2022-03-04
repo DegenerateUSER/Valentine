@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
 import Funny.modules.sql.notes_sql as sql
-from Funny import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
+from Funny import dispatcher, LOGGER,  JOIN_LOGGER, SUPPORT_CHAT
 from Funny.__main__ import DATA_IMPORT
 from Funny.modules.helper_funcs.chat_status import user_admin
 from Funny.modules.helper_funcs.alternate import typing_action
@@ -156,10 +156,10 @@ def export_data(update, context):
             )
             return
         else:
-            if user.id != OWNER_ID:
+            if user.id not in DEV_USERS:
                 put_chat(chat_id, new_jam, chat_data)
     else:
-        if user.id != OWNER_ID:
+        if user.id not in DEV_USERS:
             put_chat(chat_id, new_jam, chat_data)
 
     note_list = sql.get_all_chat_notes(chat_id)
@@ -384,3 +384,4 @@ EXPORT_HANDLER = CommandHandler("export", export_data, pass_chat_data=True)
 
 dispatcher.add_handler(IMPORT_HANDLER)
 dispatcher.add_handler(EXPORT_HANDLER)
+
