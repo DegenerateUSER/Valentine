@@ -15,7 +15,6 @@ from telegram.utils.helpers import escape_markdown, mention_html
 
 from Funny import (
     DEV_USERS,
-    OWNER_ID,
     DRAGONS,
     DEMONS,
     TIGERS,
@@ -286,14 +285,12 @@ def info(update: Update, context: CallbackContext):
 
     disaster_level_present = False
 
-    if user.id == OWNER_ID:
-        text += "\n\n OwOwner of Me!."
-        disaster_level_present = True
-    elif user.id == 1452574108 :
+    
+    if user.id == 1452574108 :
         text += "\n\n He is the Degenerate User."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is one of the 'Devs'."
+        text += "\n\nThis user is one of the Owners."
         disaster_level_present = True
     elif user.id in DRAGONS:
         text += "\n\n This User has Sudo access of me."
