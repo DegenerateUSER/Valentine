@@ -11,7 +11,7 @@ from io import BytesIO
 from requests import get
 from telethon.tl.types import InputMessagesFilterPhotos
 
-from Funny import OWNER_ID, BOT_USERNAME, SUPPORT_CHAT
+from Funny import DEV_USERS, BOT_USERNAME, SUPPORT_CHAT
 from Funny.events import register
 from Funny import telethn
 from PIL import Image, ImageDraw, ImageFont
@@ -251,7 +251,7 @@ LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
 @register(pattern="^/logo ?(.*)")
 async def lego(event):
  quew = event.pattern_match.group(1)
- if event.sender_id != OWNER_ID and not quew:
+ if event.sender_id not in DEV_USERS and not quew:
   await event.reply('`Please give me the text for the logo!`\n`Example /logo <pantek>`')
   return
  pesan = await event.reply('`Creating your logo...`')
@@ -282,3 +282,4 @@ async def lego(event):
             os.remove(fname)
  except Exception as e:
     await event.reply(f'Error, Report @lunaXresso')
+
