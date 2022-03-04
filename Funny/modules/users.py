@@ -12,13 +12,13 @@ from telegram.ext import (
 )
 
 import Funny.modules.sql.users_sql as sql
-from Funny import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from Funny import DEV_USERS, LOGGER,  dispatcher
 from Funny.modules.helper_funcs.chat_status import dev_plus, sudo_plus
 from Funny.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
-DEV_AND_MORE = DEV_USERS.append(int(OWNER_ID))
+DEV_AND_MORE = DEV_USERS
 
 
 def get_user_id(username):
