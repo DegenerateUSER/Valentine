@@ -1,1 +1,1 @@
-worker: python3 -m Yumeko
+worker: python3 -m Funny
