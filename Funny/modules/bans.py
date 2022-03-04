@@ -5,7 +5,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from Funny import (DEV_USERS, LOGGER, OWNER_ID, DRAGONS, DEMONS, TIGERS,
+from Funny import (DEV_USERS, LOGGER, DRAGONS, DEMONS, TIGERS,
                           WOLVES, dispatcher)
 from Funny.modules.disable import DisableAbleCommandHandler
 from Funny.modules.helper_funcs.chat_status import (
@@ -50,13 +50,11 @@ def ban(update: Update, context: CallbackContext) -> str:
         return log_message
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
-        if user_id == OWNER_ID:
+        if user_id in DEV_USERS:
             message.reply_text(
-                "Trying to put me against my Owner huh?")
+                "Trying to put me against my Owners huh?")
             return log_message
-        elif user_id in DEV_USERS:
-            message.reply_text("Banning a dev is not an Option.")
-            return log_message
+    
         elif user_id in DRAGONS:
             message.reply_text(
                 "Not gonna Ban my Sudo!! .")
@@ -598,3 +596,4 @@ __handlers__ = [
     BAN_HANDLER, TEMPBAN_HANDLER, STEMPBAN_HANDLER, KICK_HANDLER, SKICK_HANDLER, UNBAN_HANDLER, ROAR_HANDLER,
     KICKME_HANDLER, SBAN_HANDLER
 ]
+
