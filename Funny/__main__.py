@@ -5,14 +5,14 @@ import re
 from sys import argv
 from typing import Optional
 
-from Funny import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
-                          OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
+from BoaHancockBOT import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
+                          PIRATE_KING_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
                           dispatcher, StartTime, telethn, updater, pbot)
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from Funny.modules import ALL_MODULES
-from Funny.modules.helper_funcs.chat_status import is_user_admin
-from Funny.modules.helper_funcs.misc import paginate_modules
+from BoaHancockBOT.modules import ALL_MODULES
+from BoaHancockBOT.modules.helper_funcs.chat_status import is_user_admin
+from BoaHancockBOT.modules.helper_funcs.misc import paginate_modules
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update)
 from telegram.error import (BadRequest, ChatMigrated, NetworkError,
@@ -53,33 +53,30 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hello, {},
-My name is Himeno!
-I am a Group management bot specially made to manage yoyr groups!
-To find the list of my commands hit -> /help
+I am Empress Boa Hancock! To oppose me is to die!
+Add me to your Group to manage it properly and Fun commands!
+You can find the list of available commands with /help
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I am a Group Management bot to manage your group.
+I'm a part of [StrawHats](https://t.me/BoaHancockBOTSupport)
 Have a look at the following for an idea of some of the things I can help you with.
-
 *Main* commands available:
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
-
-
 {}
 And the following:
 """.format(
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-BOA_IMG = "https://telegra.ph/file/d394509d7dcef4d7eb302.jpg"
+BOA_IMG = "https://telegra.ph/file/b965c6d1775539f0da3ff.jpg"
 
-DONATE_STRING = """No Thanks."""
+DONATE_STRING = """No Donations needed k bye"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -92,7 +89,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Funny.modules." +
+    imported_module = importlib.import_module("BoaHancockBOT.modules." +
                                               module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
@@ -197,7 +194,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕ Add Himeno To Your Group!",
+                            text="➕ Add Boa Hancock To Your Group!",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                      ],
@@ -205,10 +202,13 @@ def start(update: Update, context: CallbackContext):
                          InlineKeyboardButton(
                              text="⚙️ Support Group",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
+                         InlineKeyboardButton(
+                             text="🔔Updates Channel",
+                             url="https://t.me/BoaHancockUPDATES")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm online!\n<b>Up since:</b> <code>{}</code>".format(uptime),
+            "<b>I am Empress Boa Hancock! To oppose me is to die!,</b>\n I'm online!\n<b>Up since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
 
 
@@ -481,7 +481,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if PIRATE_KING_ID != 254318997 and DONATION_LINK:
             update.effective_message.reply_text(
                 "For now no donations instead you can join the group link below "
                 "[here]({})".format(DONATION_LINK),
@@ -525,7 +525,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[I Aᴍ UP!", parse_mode=ParseMode.MARKDOWN)
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "[Come here! Let me show you the strength of the Kuja!](https://telegra.ph/file/7faa75fafaf7085afc106.mp4)", parse_mode=ParseMode.MARKDOWN)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
@@ -569,7 +569,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Himeno Is Now Online!")
+        LOGGER.info("Boa Hancock Is Now Online!")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
    
     if len(argv) not in (1, 3, 4):
