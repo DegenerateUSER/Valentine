@@ -52,9 +52,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello, {},
-My name is Himeno!
-I am a Group management bot specially made to manage yoyr groups!
+H- he- hello, {},
+My name is Reze!
+I am a Group management bot specially made to manage your groups!
 To find the list of my commands hit -> /help
 """
 
@@ -77,7 +77,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-BOA_IMG = "https://telegra.ph/file/d394509d7dcef4d7eb302.jpg"
+BOA_IMG = "https://telegra.ph/file/14ce41c9510c1ced16ea2.jpg"
 
 DONATE_STRING = """No Thanks."""
 
@@ -197,7 +197,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕ Add Himeno To Your Group!",
+                            text="➕ Add Reze To Your Group!",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                      ],
@@ -208,7 +208,7 @@ def start(update: Update, context: CallbackContext):
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm online!\n<b>Up since:</b> <code>{}</code>".format(uptime),
+            "I was always online!"\n"<b>Up since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
 
 
@@ -565,7 +565,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("Himeno Is Now Online!")
+        LOGGER.info("Reze Is Now Online!")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
    
     if len(argv) not in (1, 3, 4):
