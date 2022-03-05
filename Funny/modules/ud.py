@@ -22,6 +22,6 @@ def ud(update: Update, context: CallbackContext):
 UD_HANDLER = DisableAbleCommandHandler(["ud"], ud)
 
 dispatcher.add_handler(UD_HANDLER)
-
+__mod_name__ = "UD"
 __command_list__ = ["ud"]
 __handlers__ = [UD_HANDLER]
