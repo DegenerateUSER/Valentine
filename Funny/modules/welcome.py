@@ -189,7 +189,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == 1452574108:
                 update.effective_message.reply_text(
-                    "OwO Owner-kun", reply_to_message_id=reply
+                    "Lmao Degeneratte Joined", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -269,8 +269,8 @@ def new_member(update: Update, context: CallbackContext):
                             [
                                 {
                                     InlineKeyboardButton(
-                                        text="sᴜᴘᴘᴏʀᴛ​",
-                                        url="https://t.me/himenosupport",
+                                        text="Hehehehe​",
+                                        url="https://t.me/GodsValley",
                                     )
                                 }
                             ]
