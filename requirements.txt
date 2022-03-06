@@ -1,4 +1,4 @@
-ffuture
+future
 emoji
 tzlocal
 lxml
