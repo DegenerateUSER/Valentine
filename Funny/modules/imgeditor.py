@@ -1,6 +1,6 @@
 # By @TroJanzHEX
 # Improved by ShasaBot
-
+from Funny import pbot as app
 from pyrogram import filters
 from pyrogram.types import (
     CallbackQuery,
