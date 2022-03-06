@@ -84,7 +84,7 @@ lyricsgenius
 pendulum
 opencv-python-headless
 google_trans_new
-humanize>=4.2.0
+humanize==4.0.0
 telethon==1.24.0
 pyrogram
 tgCrypto>=1.2.2
