@@ -25,7 +25,6 @@ CurrencyConverter
 googletrans
 jikanpy
 speedtest-cli
-coffeehouse
 regex
 bleach
 git+https://github.com/starry69/python-markdown2.git
@@ -90,9 +89,7 @@ pyrogram
 tgCrypto>=1.2.2
 pytube
 youtube-search-python
-redis
 lyricsgenius
-cryptg
 python-arq
 aioredis
 odmantic
