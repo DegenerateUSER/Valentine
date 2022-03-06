@@ -60,7 +60,7 @@ from Funny import pbot as Client
 
 lel = 00000000
 # pylint:disable=import-error
-@Client.on_message(filters.command(["edit", "editor"]))
+@app.on_message(filters.command(["edit", "editor"]))
 async def photo(client: Client, message: Message):
     try:
         if not message.reply_to_message.photo:
@@ -126,7 +126,7 @@ async def photo(client: Client, message: Message):
                 return
 
 
-@Client.on_callback_query()
+@app.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
     user_id = query.from_user.id
     if lel == user_id:
