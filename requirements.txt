@@ -73,7 +73,7 @@ pykeyboard
 aiohttp
 youtube_dl
 fuzzysearch
-Python_ARQ
+Python_ARQ>=4.8
 httpx[http2]
 gpytranslate
 google-trans-new
