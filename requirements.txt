@@ -87,7 +87,6 @@ humanize==4.0.0
 telethon==1.24.0
 pyrogram
 tgCrypto>=1.2.2
-pytube
 youtube-search-python
 lyricsgenius
 python-arq
