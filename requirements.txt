@@ -1,3 +1,5 @@
+future
+emoji
 gtts
 faker
 beautifulsoup4
