@@ -93,7 +93,6 @@ youtube-search-python
 redis
 lyricsgenius
 cryptg
-cryptography
 python-arq
 aioredis
 odmantic
