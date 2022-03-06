@@ -96,7 +96,7 @@ cryptg
 cryptography
 python-arq
 aioredis
-odmantic>=2.2.5
+odmantic
 carbonnow
 glitch_this
 NumPy
