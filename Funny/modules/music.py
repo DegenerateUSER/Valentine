@@ -17,6 +17,11 @@ from Funny.utils.errors import capture_err
 from Funny.utils.pastebin import paste
 
 __mod_name__ = "Media"
+__help__ = """
+*smol help ig*
+ • `/saavn`*:* gwts song from saavn.
+ 
+"""
 
 
 is_downloading = False
