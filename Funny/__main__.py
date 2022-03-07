@@ -209,7 +209,7 @@ def start(update: Update, context: CallbackContext):
     else:
         update.effective_message.reply_text(
             "**<b>[I was always online!](https://telegra.ph/file/4e4a61976a24845f20aa1.jpg) \n Up since:</b> <code>{}</code>**".format(uptime),
-            parse_mode=ParseMode.HTML)
+            )
 
 
 # for test purposes
