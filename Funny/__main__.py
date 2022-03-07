@@ -52,7 +52,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-H- he- hello, {},
+H- He- Hello, {},
 My name is Reze!
 I am a Group management bot specially made to manage your groups!
 To find the list of my commands hit -> /help
@@ -208,8 +208,8 @@ def start(update: Update, context: CallbackContext):
                      ]]))
     else:
         update.effective_message.reply_text(
-            "**<b>[I was always online!](https://telegra.ph/file/4e4a61976a24845f20aa1.jpg) \n Up since:</b> <code>{}</code>**".format(uptime),
-            )
+            "** <b> [I was always online!](https://telegra.ph/file/4e4a61976a24845f20aa1.jpg) \n Up since:</b> <code>{}</code> **".format(uptime),
+            parse_mode=ParseMode.HTML)
 
 
 # for test purposes
