@@ -14,7 +14,7 @@ async def awake(event):
   tai = event.sender.first_name
   YUMEKO = "**Holla I'm Reze!** \n\n"
   YUMEKO += "×**I'm Working Properly** \n\n"
-  YUMEKO += "×**My Have No Owner Just Few Gay Devs Find Then=m At [GodsValley](https://t.me/FringesBright)**× \n\n"
+  YUMEKO += "×**I Have No Owner Just Few Gay Devs Find Them At [GodsValley](https://t.me/FringesBright)**× \n\n"
   YUMEKO += f"×**Telethon Version : {tlhver}** \n\n"
   YUMEKO += f"×**Pyrogram Version : {pyrover}** \n\n"
   YUMEKO += "**Thanks For Adding Me Here ❤️**"
