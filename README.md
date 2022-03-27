@@ -1,4 +1,4 @@
-# BAAPBOT
+# PhosBOT
 
 
 ## How to setup/deploy.
