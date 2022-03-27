@@ -52,8 +52,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-H- He- Hello, {},
-My name is Reze!
+Hello, {},
+I am Phosphophyllite! You can Call me Phos
 I am a Group management bot specially made to manage your groups!
 To find the list of my commands hit -> /help
 """
@@ -77,7 +77,7 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-BOA_IMG = "https://telegra.ph/file/14ce41c9510c1ced16ea2.jpg"
+BOA_IMG = "https://telegra.ph/file/37f7e50d825cf9c984220.jpg"
 
 DONATE_STRING = """No Thanks."""
 
@@ -197,7 +197,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕ Add Reze To Your Group!",
+                            text="➕ Add Phos To Your Group!",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                      ],
@@ -208,7 +208,7 @@ def start(update: Update, context: CallbackContext):
                      ]]))
     else:
         update.effective_message.reply_text(
-            '<b> I was always online<a href="https://telegra.ph/file/4e4a61976a24845f20aa1.jpg">!</a>  \n Up since:</b> <code>{}</code> **'.format(uptime),
+            '<b> I just cant sleep <a href="https://telegra.ph/file/0090fe5d7360039795bba.jpg">!</a>  \n Up since:</b> <code>{}</code> **'.format(uptime),
             parse_mode=ParseMode.HTML)
 
 
